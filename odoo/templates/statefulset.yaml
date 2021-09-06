@@ -58,7 +58,7 @@ spec:
               mkdir -p /cloudclusters/.docker-entrypoint.d
           fi
           docker_process_init_files /cloudclusters/.docker-entrypoint.d/*
-          {{ end }}
+
         env:
         - name: IS_INITCONTAINER
           value: "true"

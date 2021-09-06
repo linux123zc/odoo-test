@@ -1,8 +1,8 @@
 image:
   registry: registry.cloudclusters.net
   app:
-    repository: cloudclusters/odoo13.0
-    tag: "0.1.6-release"
+    repository: cloudclusters/odoo14.0
+    tag: "0.1.5-release"
   agent:
     repository: cloudclusters/odoo-agent
     tag: "0.1.2-release"

@@ -32,8 +32,14 @@ spec:
       - command:
         - /bin/bash
         - -ecx
-
-       - {{ .Files.Get "1.sh"  |quote }}
+        - |
+          set -ex
+          cp /configmap/* /etc/rabbitmq
+          rm -f /var/lib/rabbitmq/.erlang.cookie
+          {{- if .Values.forceBoot }}
+          if [ -d "${RABBITMQ_MNESIA_DIR}" ]; then
+            touch "${RABBITMQ_MNESIA_DIR}/force_load"
+          fi
         env:
         - name: IS_INITCONTAINER
           value: "true"

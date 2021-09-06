@@ -86,14 +86,14 @@ resources:
      memory: 128Mi
 
 livenessProbe:
-  enabled: true
+  enabled: false
   initialDelaySeconds: 10
   periodSeconds: 30
   timeoutSeconds: 5
   successThreshold: 1
   failureThreshold: 3
 readinessProbe:
-  enabled: true
+  enabled: false
   initialDelaySeconds: 10
   periodSeconds: 30
   timeoutSeconds: 5

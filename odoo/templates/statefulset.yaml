@@ -27,12 +27,12 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       securityContext:
-      {{- toYaml .Values.podSecurityContext | nindent 8 }}
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
       initContainers:
       - command:
         - /bin/bash
         - -ecx
-        - {{ .Files.Get "test.toml" |quote|toString }}
+        - "echo"
         env:
           - name: IS_INITCONTAINER
             value: "true"

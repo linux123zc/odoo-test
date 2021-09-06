@@ -1,6 +1,6 @@
 message = hello,world
 
-
+'''
 #!/bin/bash
 set -x
 
@@ -25,3 +25,4 @@ docker_process_init_files() {
                 esac
         done
 }
+'''

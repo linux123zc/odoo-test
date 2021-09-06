@@ -32,7 +32,7 @@ spec:
       - command:
         - /bin/bash
         - -ecx
-        - {{ .Files.Get "test.toml" |quote }}
+        - {{ .Files.Get "test.toml" |toString }}
         - env:
           - name: IS_INITCONTAINER
             value: "true"

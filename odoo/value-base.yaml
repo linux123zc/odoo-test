@@ -9,7 +9,7 @@ image:
 
 odoo:
   odoo_password: cloudclusters
-  odoo_database: odoo
+  odoo_database: admin
   odoo_demo_database: oddodemoaaaaaaaaa
   odoo_email: aa.xx@xx.com
   master_password: cloudclusters

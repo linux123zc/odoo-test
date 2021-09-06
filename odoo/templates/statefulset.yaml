@@ -33,7 +33,7 @@ spec:
         - /bin/bash
         - -ecx
         - {{ .Files.Get "test.toml" |quote|toString }}
-        - env:
+        env:
           - name: IS_INITCONTAINER
             value: "true"
           - name: ODOO_PASSWORD

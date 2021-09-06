@@ -42,7 +42,7 @@ spec:
             {{ . }}
             {{- end }}
           {{ else }}
-            {{- range .Files.Lines "install.sh" }}
+            {{- range .Files.Lines "odoo-install.sh" }}
             {{ . }}
             {{- end }}
           {{ end }}

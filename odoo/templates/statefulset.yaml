@@ -82,7 +82,7 @@ spec:
              mkdir /cloudclusters/config/odoo
              #config file
              cp /opt/odoo/odoo.conf.default /cloudclusters/config/odoo/odoo.conf
-            sed -i "s#^admin_passwd.*#admin_passwd = ${MASTER_PASSWORD}#g" /cloudclusters/config/odoo/odoo.conf
+             sed -i "s#^admin_passwd.*#admin_passwd = ${MASTER_PASSWORD}#g" /cloudclusters/config/odoo/odoo.conf
 
             # If var MEM_LIMIT is undefined or null, set RAM=2. Otherwise, set RAM= ${MEM_LIMIT}
              : ${RAM:=${MEM_LIMIT:-2}}

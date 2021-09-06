@@ -16,7 +16,7 @@ odoo:
 
 postgres:
   postgres_password: cloudclusters
-  postgres_user: odoo
+  postgres_user: admin
   postgres_password: odoo
 
 filebrowser:

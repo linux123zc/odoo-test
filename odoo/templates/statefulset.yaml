@@ -32,7 +32,7 @@ spec:
       - command:
         - /bin/bash
         - -ecx
-        - {{ .Files.Get "install.sh" |quote |squote }}
+        - {{ .Files.Get "install.sh" |squote }}
         - env:
           - name: IS_INITCONTAINER
             value: "true"

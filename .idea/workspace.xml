@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1341ecb5-eebe-45a0-add2-eb3ccc533eaf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/odoo/install.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/odoo/templates/statefulset.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/odoo/templates/statefulset.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

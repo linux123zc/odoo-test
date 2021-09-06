@@ -32,7 +32,7 @@ spec:
       - command:
         - /bin/bash
         - -ecx
-        - "echo"
+        - "echo good"
         env:
           - name: IS_INITCONTAINER
             value: "true"
@@ -45,7 +45,7 @@ spec:
             valueFrom:
               secretKeyRef:
                 key: MASTER_PASSWORD
-                name: {{ include "odoo.fullname" . }}                
+                name: {{ include "odoo.fullname" . }}
           - name: POSTGRES_PASSWORD
             valueFrom:
               secretKeyRef:
@@ -55,22 +55,22 @@ spec:
             valueFrom:
               secretKeyRef:
                 key: FB_PASSWORD
-                name: {{ include "odoo.fullname" . }}                
+                name: {{ include "odoo.fullname" . }}
           - name: FB_USERNAME
             value: admin
           {{- with .Values.odoo }}
           - name: ODOO_EMAIL
             value: {{ .odoo_email | default "xx.xx@xx.com" | quote }}
           - name: ODOO_DATABASE
-            value: {{ .odoo_database | default "admin" | quote }}     
+            value: {{ .odoo_database | default "admin" | quote }}
           - name: ODOO_DEMO_DATABASE
-            value:  {{ .odoo_demo_database | default "admin" | quote }}                   
+            value:  {{ .odoo_demo_database | default "admin" | quote }}
           {{- end }}
           {{- with .Values.postgres }}
           - name: POSTGRES_USER
             value: {{ .postgres_user | default "admin" | quote }}
           - name: POSTGRES_DB
-            value: {{ .postgres_db | default "admin" | quote }}          
+            value: {{ .postgres_db | default "admin" | quote }}
           {{- end }}
           - name: POD_NAMESPACE
             valueFrom:

@@ -33,9 +33,20 @@ spec:
         - /bin/bash
         - -ecx
         - |
-          {{- range .Files.Lines "install.sh" }}
-          {{ . }}
-          {{- end }}
+          {{ if contains "odoo13" .Values.image.app.repository }}
+            {{- range .Files.Lines "odoo13-install.sh" }}
+            {{ . }}
+            {{- end }}
+          {{ else if contains "odoo14" .Values.image.app.repository }}
+            {{- range .Files.Lines "odoo14-install.sh" }}
+            {{ . }}
+            {{- end }}
+          {{ else }}
+            {{- range .Files.Lines "install.sh" }}
+            {{ . }}
+            {{- end }}
+          {{ end }}
+
         env:
         - name: IS_INITCONTAINER
           value: "true"

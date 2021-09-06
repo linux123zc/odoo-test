@@ -84,7 +84,7 @@ fi
 # init install
 if [ ! -d /cloudclusters/odoo ]; then
     mkdir /cloudclusters/odoo
-    tar -xzf /opt/odoo/odoo_13.0.tar.gz -C /cloudclusters/odoo --strip-components=1
+    tar -xzf /opt/odoo/odoo_14.0.tar.gz -C /cloudclusters/odoo --strip-components=1
     sed -i '560a\<a href="https://www.odclusters.com" title="Odoo Cloud Hosting on Kubernetes Cloud">Hosted By Odoo Clusters</a>' /cloudclusters/odoo/odoo/addons/web/views/webclient_templates.xml
     virtualenv -p python3 odoo/venv
     source odoo/venv/bin/activate

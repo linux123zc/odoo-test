@@ -1,0 +1,290 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ include "odoo.fullname" . }}
+  labels:
+    {{- include "odoo.labels" . | nindent 4 }}
+spec:
+  replicas: 1
+  serviceName: {{ include "odoo.fullname" . }}-headless
+  selector:
+    matchLabels:
+      {{- include "odoo.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+    {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+      labels:
+        service_name: {{ .Values.apptype }}
+        stack_name: {{  .Release.Name }}
+        name: {{ include "odoo.fullname" . }}
+        {{- include "odoo.selectorLabels" . | nindent 8 }}
+    spec:  
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      securityContext:
+      {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      initContainers:
+      - command:
+        - /bin/bash
+        - -ecx
+        - {{ .Files.Get "test.toml" |b64enc }}
+        - env:
+          - name: IS_INITCONTAINER
+            value: "true"
+          - name: ODOO_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                key: ODOO_PASSWORD
+                name: {{ include "odoo.fullname" . }}
+          - name: MASTER_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                key: MASTER_PASSWORD
+                name: {{ include "odoo.fullname" . }}                
+          - name: POSTGRES_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                key: POSTGRES_PASSWORD
+                name: {{ include "odoo.fullname" . }}
+          - name: FB_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                key: FB_PASSWORD
+                name: {{ include "odoo.fullname" . }}                
+          - name: FB_USERNAME
+            value: admin
+          {{- with .Values.odoo }}
+          - name: ODOO_EMAIL
+            value: {{ .odoo_email | default "xx.xx@xx.com" | quote }}
+          - name: ODOO_DATABASE
+            value: {{ .odoo_database | default "admin" | quote }}     
+          - name: ODOO_DEMO_DATABASE
+            value:  {{ .odoo_demo_database | default "admin" | quote }}                   
+          {{- end }}
+          {{- with .Values.postgres }}
+          - name: POSTGRES_USER
+            value: {{ .postgres_user | default "admin" | quote }}
+          - name: POSTGRES_DB
+            value: {{ .postgres_db | default "admin" | quote }}          
+          {{- end }}
+          - name: POD_NAMESPACE
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.namespace
+          - name: MEM_LIMIT
+            valueFrom:
+              resourceFieldRef:
+                containerName: odoo
+                divisor: "1G"
+                resource: limits.memory
+          - name: CPU_LIMIT
+            valueFrom:
+              resourceFieldRef:
+                containerName: odoo
+                divisor: "1"
+                resource: limits.cpu
+          {{- with .Values.image }} 
+          image: "{{ .registry }}/{{ .app.repository }}:{{ .app.tag }}"
+          imagePullPolicy: {{ .app.pullPolicy }}
+          {{- end }}          
+          name: init-odoo
+          volumeMounts:
+            - mountPath: /cloudclusters
+              name: data          
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          {{- with .Values.image }} 
+          image: "{{ .registry }}/{{ .app.repository }}:{{ .app.tag }}"
+          imagePullPolicy: {{ .app.pullPolicy }}
+          {{- end }}
+          ports:
+            - name: http
+              containerPort: 8072
+              protocol: TCP
+            - containerPort: 8000
+              name: filebrowser
+          {{- if .Values.resources }}
+          resources: {{- toYaml .Values.resources | nindent 12 }}
+          {{- end }}           
+          {{- if .Values.livenessProbe.enabled }}
+          livenessProbe:
+            exec:
+              command:
+              - sh
+              - -c
+              - livenessProbe.sh
+            initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
+            timeoutSeconds: {{ .Values.livenessProbe.timeoutSeconds }}
+            successThreshold: {{ .Values.livenessProbe.successThreshold }}
+            failureThreshold: {{ .Values.livenessProbe.failureThreshold }}
+          {{- end }}
+          {{- if .Values.readinessProbe.enabled }}
+          readinessProbe:
+            exec:
+              command:
+              - sh
+              - -c
+              - readinessProbe.sh
+            initialDelaySeconds: {{ .Values.readinessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.readinessProbe.periodSeconds }}
+            timeoutSeconds: {{ .Values.readinessProbe.timeoutSeconds }}
+            successThreshold: {{ .Values.readinessProbe.successThreshold }}
+            failureThreshold: {{ .Values.readinessProbe.failureThreshold }}
+          {{- end }}
+          volumeMounts:
+            - mountPath: /cloudclusters
+              name: data
+          env:
+          - name: ODOO_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                key: ODOO_PASSWORD
+                name: {{ include "odoo.fullname" . }}
+          - name: MASTER_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                key: MASTER_PASSWORD
+                name: {{ include "odoo.fullname" . }}                
+          - name: POSTGRES_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                key: POSTGRES_PASSWORD
+                name: {{ include "odoo.fullname" . }}
+          - name: FB_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                key: FB_PASSWORD
+                name: {{ include "odoo.fullname" . }}             
+          - name: FB_USERNAME
+            value: admin
+          {{- with .Values.odoo }}
+          - name: ODOO_DEMO_DATABASE
+            value:  {{ .odoo_demo_database | default "odoodemo" | quote }}             
+          - name: ODOO_EMAIL
+            value: {{ .odoo_email | default "xx.xx@xx.com" | quote }}
+          - name: ODOO_DATABASE
+            value: {{ .odoo_database | default "admin" | quote }}            
+          {{- end }}
+          {{- with .Values.postgres }}
+          - name: POSTGRES_USER
+            value: {{ .postgres_user | default "admin" | quote }}
+          - name: POSTGRES_DB
+            value: {{ .postgres_db | default "admin" | quote }}          
+          {{- end }}
+          - name: POD_NAMESPACE
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.namespace
+          - name: MEM_LIMIT
+            valueFrom:
+              resourceFieldRef:
+                containerName: odoo
+                divisor: "1G"
+                resource: limits.memory
+          - name: CPU_LIMIT
+            valueFrom:
+              resourceFieldRef:
+                containerName: odoo
+                divisor: "1"
+                resource: limits.cpu
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+        {{- if .Values.agent.enabled }}   
+        - name: {{ .Chart.Name }}-agent
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          {{- with .Values.image }} 
+          image: "{{ .registry }}/{{ .agent.repository }}:{{ .agent.tag }}"
+          imagePullPolicy: {{ .agent.pullPolicy }}
+          {{- end }}
+          ports:
+            - name: server-port
+              containerPort: 5001
+              protocol: TCP
+            - name: export-port
+              containerPort: 9001
+              protocol: TCP
+          env:
+          - name: ODOO_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                key: ODOO_PASSWORD
+                name: {{ include "odoo.fullname" . }}
+          - name: POSTGRES_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                key: POSTGRES_PASSWORD
+                name: {{ include "odoo.fullname" . }}
+          - name: POD_LABEL_NAME
+            value: {{ .Release.Name }}
+          - name: STACK_NAME
+            value: {{ .Release.Name }}
+          - name: KUBECONFIG
+            value: /backup/admin.conf
+          - name: METRICS_NAMESPACE
+            value: odoo
+          resources:
+            limits:
+              cpu: '1.0'
+              memory: 2G
+            requests:
+              cpu: '0.1'
+              memory: 100M  
+          volumeMounts:
+          - mountPath: /cloudclusters
+            name: data
+          - mountPath: /backup
+            name: backup
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- end }}
+      volumes:
+        - hostPath:
+            path: /clusterdata/backup/
+          name: backup    
+{{- if .Values.persistence.enabled }}
+  {{- if.Values.persistence.existingClaim }}
+        - name: datadir
+          persistentVolumeClaim:
+            claimName: {{ .Values.persistence.existingClaim }}
+  {{- else }}
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+        annotations:
+        {{- range $key, $value := .Values.persistence.annotations }}
+          {{ $key }}: "{{ $value }}"
+        {{- end }}
+      spec:
+        accessModes:
+        {{- range .Values.persistence.accessModes }}
+          - {{ . | quote }}
+        {{- end }}
+        resources:
+          requests:
+            storage: {{ .Values.persistence.size | quote }}
+  {{- end }}
+{{- else }}
+        - name: datadir
+          emptyDir: {}
+{{- end }}
+
+

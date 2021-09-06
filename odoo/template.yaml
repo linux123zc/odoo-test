@@ -1,0 +1,274 @@
+apiVersion: v1
+data:
+  tls.crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUZWekNDQkQrZ0F3SUJBZ0lTQTc5cDBaT1dCLzBWL3FMS2V6ZE5CRWgwTUEwR0NTcUdTSWIzRFFFQkN3VUEKTUVveEN6QUpCZ05WQkFZVEFsVlRNUll3RkFZRFZRUUtFdzFNWlhRbmN5QkZibU55ZVhCME1TTXdJUVlEVlFRRApFeHBNWlhRbmN5QkZibU55ZVhCMElFRjFkR2h2Y21sMGVTQllNekFlRncweE9UQTVNall3TnpVek1ERmFGdzB4Ck9URXlNalV3TnpVek1ERmFNQm94R0RBV0JnTlZCQU1NRHlvdWRISnBjR0Z1Wld4ekxtTnZiVENDQVNJd0RRWUoKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBUGVGVHlUbC9lZkJOeC9aZCtVa0syU3NFSEpZL1NXbgpkekN4T01aMVhialduTXFSY0txZ0E3M2lORHR5RTI1d1k5UnU1MTNKaFkxWk1YOW5pSlVkV2MzOVB0LytUckhzCkNNTHVLWDBlK3JQWkNLYldlamtYek1Lb2dtNUdOK2dRVU1rYkluVTl2UlgzZzJhZDZlOXlRK1pOSE53MGtkRVUKMjhOekNDcVBWRVJOdnhRbUFPdmhya1pBaFZ0MS9LQk82Qmp0SHZDaitxZGhRTEdRSm8rWEdPV29uNmxQSHRuZAppa1FDN3QxSVNuQnVVM2E0bWw4YXIrWnNJaTZ5ZGhVUjJjY0tIVnhOa3J6bVFZeE5mT2FsNllNUm00UGdFMVlGClBXWXpkeGdhU0tqTFhXb1V1cGVCRjlNeVBmQlNGQ2UvaVlWcWFSZ09GSmhQb1diTkpYMUhpcGNDQXdFQUFhT0MKQW1Vd2dnSmhNQTRHQTFVZER3RUIvd1FFQXdJRm9EQWRCZ05WSFNVRUZqQVVCZ2dyQmdFRkJRY0RBUVlJS3dZQgpCUVVIQXdJd0RBWURWUjBUQVFIL0JBSXdBREFkQmdOVkhRNEVGZ1FVTFRCVGYvOWREVDhCbjVCUGk0WWZSQ0F5Ck1hZ3dId1lEVlIwakJCZ3dGb0FVcUVwcVl3UjkzYnJtMFRtM3BrVmw3L09vN0tFd2J3WUlLd1lCQlFVSEFRRUUKWXpCaE1DNEdDQ3NHQVFVRkJ6QUJoaUpvZEhSd09pOHZiMk56Y0M1cGJuUXRlRE11YkdWMGMyVnVZM0o1Y0hRdQpiM0puTUM4R0NDc0dBUVVGQnpBQ2hpTm9kSFJ3T2k4dlkyVnlkQzVwYm5RdGVETXViR1YwYzJWdVkzSjVjSFF1CmIzSm5MekFhQmdOVkhSRUVFekFSZ2c4cUxuUnlhWEJoYm1Wc2N5NWpiMjB3VEFZRFZSMGdCRVV3UXpBSUJnWm4KZ1F3QkFnRXdOd1lMS3dZQkJBR0MzeE1CQVFFd0tEQW1CZ2dyQmdFRkJRY0NBUllhYUhSMGNEb3ZMMk53Y3k1cwpaWFJ6Wlc1amNubHdkQzV2Y21jd2dnRUZCZ29yQmdFRUFkWjVBZ1FDQklIMkJJSHpBUEVBZGdCMGZ0cURNYTB6CkVKRWhuTTRsVDBKd3dyLzlYa0lnQ01ZM05Ybm1FSHZNVmdBQUFXMXN4ZzlSQUFBRUF3QkhNRVVDSVFET2k0V3UKQjk4QmRkZjUrNWw3L2dQRVFNWjYrUForMDdFbU1PSkp0eFlNUXdJZ0RPMEZFSjJMTE44Y3dpZm4yWGtZQWM0dApMNkZWSk41WmRBYWNOM2pIS0l3QWR3Qmo4dHZONkR2TUxNOExjb1FuVjJzenBJMWhkNCs5ZGFZNHNjZG9WRXZZCmpRQUFBVzFzeGcxTEFBQUVBd0JJTUVZQ0lRRDBHa2hBaWMvMFpuSGJBVzJlVDRjWFNWV05LVllmanlnTkdrOG8KdDFjSlVnSWhBSTdJOUloanlCdUZmU3o0THZqakFXRmd3aG96NVU1dkFRNGx0UVRUeENMN01BMEdDU3FHU0liMwpEUUVCQ3dVQUE0SUJBUUJvMHFVUzMwTm5hakRPU1AwVGZTYUpGY3RFeGp0c3pxYXowZytaWkJ2dXgvZkVic1V3CkFGRVJjL3FUOUFpOS9qSWlqU1Q3UmgzZkp2S2ZpYlo0VnJoaWo5MXptOWt3eUZRYm14YnpsYkJrTDIvUlowUDMKaEhLZVdaVSs2dVJHblBFckRPRUZxR09tWnFWdXEyODRmNzEzYzV0OUU2TGpDVWdsZ3oramIwWUcwd1VKQnB1Sgo3ckJySjhVdmRFcmpLRC92L05LZDRyQXNuNi81VU82RDFBYk9Pa09lbHNYQmNZMnpzK1ZFYnorY0tDZEFTZEY0ClpRWkdXK2YycDhBTjg1S09ZU1l3OTQ3U0dNazJlS1RlN1B5WDVuNGFzK0FvaXdGVVlTTmFESUtjNldsV1l6K28KdzlZZVhYcTV6NmxZaVRPZGVSL3pubjNZalkvY050NHVCVjExCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0KLS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUVrakNDQTNxZ0F3SUJBZ0lRQ2dGQlFnQUFBVk9GYzJvTGhleW5DREFOQmdrcWhraUc5dzBCQVFzRkFEQS8KTVNRd0lnWURWUVFLRXh0RWFXZHBkR0ZzSUZOcFoyNWhkSFZ5WlNCVWNuVnpkQ0JEYnk0eEZ6QVZCZ05WQkFNVApEa1JUVkNCU2IyOTBJRU5CSUZnek1CNFhEVEUyTURNeE56RTJOREEwTmxvWERUSXhNRE14TnpFMk5EQTBObG93ClNqRUxNQWtHQTFVRUJoTUNWVk14RmpBVUJnTlZCQW9URFV4bGRDZHpJRVZ1WTNKNWNIUXhJekFoQmdOVkJBTVQKR2t4bGRDZHpJRVZ1WTNKNWNIUWdRWFYwYUc5eWFYUjVJRmd6TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQwpBUThBTUlJQkNnS0NBUUVBbk5NTThGcmxMa2UzY2wwM2c3Tm9ZekRxMXpVbUdTWGh2YjQxOFhDU0w3ZTRTMEVGCnE2bWVOUWhZN0xFcXhHaUhDNlBqZGVUbTg2ZGljYnA1Z1dBZjE1R2FuL1BRZUdkeHlHa09sWkhQL3VhWjZXQTgKU014K3lrMTNFaVNkUnh0YTY3bnNIamNBSEp5c2U2Y0Y2czVLNjcxQjVUYVl1Y3Y5YlR5V2FOOGpLa0tRRElaMApaOGgvcFpxNFVtRVVFejlsNllLSHk5djZEbGIyaG9uemhUK1hocSt3M0JydmF3MlZGbjNFSzZCbHNwa0VObldBCmE2eEs4eHVRU1hndm9wWlBLaUFsS1FUR2RNRFFNYzJQTVRpVkZycW9NN2hEOGJFZnd6Qi9vbmt4RXowdE52amoKL1BJemFyazVNY1d2eEkwTkhXUVdNNnI2aENtMjFBdkEySDNEa3dJREFRQUJvNElCZlRDQ0FYa3dFZ1lEVlIwVApBUUgvQkFnd0JnRUIvd0lCQURBT0JnTlZIUThCQWY4RUJBTUNBWVl3ZndZSUt3WUJCUVVIQVFFRWN6QnhNRElHCkNDc0dBUVVGQnpBQmhpWm9kSFJ3T2k4dmFYTnlaeTUwY25WemRHbGtMbTlqYzNBdWFXUmxiblJ5ZFhOMExtTnYKYlRBN0JnZ3JCZ0VGQlFjd0FvWXZhSFIwY0RvdkwyRndjSE11YVdSbGJuUnlkWE4wTG1OdmJTOXliMjkwY3k5awpjM1J5YjI5MFkyRjRNeTV3TjJNd0h3WURWUjBqQkJnd0ZvQVV4S2V4cEhzc2NmcmI0VXVRZGYvRUZXQ0ZpUkF3ClZBWURWUjBnQkUwd1N6QUlCZ1puZ1F3QkFnRXdQd1lMS3dZQkJBR0MzeE1CQVFFd01EQXVCZ2dyQmdFRkJRY0MKQVJZaWFIUjBjRG92TDJOd2N5NXliMjkwTFhneExteGxkSE5sYm1OeWVYQjBMbTl5WnpBOEJnTlZIUjhFTlRBegpNREdnTDZBdGhpdG9kSFJ3T2k4dlkzSnNMbWxrWlc1MGNuVnpkQzVqYjIwdlJGTlVVazlQVkVOQldETkRVa3d1ClkzSnNNQjBHQTFVZERnUVdCQlNvU21wakJIM2R1dWJST2JlbVJXWHY4Nmpzb1RBTkJna3Foa2lHOXcwQkFRc0YKQUFPQ0FRRUEzVFBYRWZOaldEamRHQlg3Q1ZXK2RsYTVjRWlsYVVjbmU4SWtDSkx4V2g5S0VpazNKSFJSSEdKbwp1TTJWY0dmbDk2UzhUaWhSelp2b3JvZWQ2dGk2V3FFQm10enczV29kYXRnK1Z5T2VwaDRFWXByLzF3WEt0eDgvCndBcEl2SlN3dG1WaTRNRlU1YU1xclNERTZlYTczTWoydGNNeW81ak1kNmptZVdVSEs4c28vam9XVW9IT1Vnd3UKWDRQbzFRWXorM2RzemtEcU1wNGZrbHhCd1hSc1cxMEtYelBNVForc09QQXZleXhpbmRtamtXOGxHeStRc1JsRwpQZlorRzZaNmg3bWplbTBZK2lXbGtZY1Y0UElXTDFpd0JpOHNhQ2JHUzVqTjJwOE0rWCtRN1VOS0VrUk9iM042CktPcWtxbTU3VEgySDNlREpBa1NuaDYvRE5GdTBRZz09Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
+  tls.key: LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2d0lCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktrd2dnU2xBZ0VBQW9JQkFRRDNoVThrNWYzbndUY2YKMlhmbEpDdGtyQkJ5V1AwbHAzY3dzVGpHZFYyNDFwektrWENxb0FPOTRqUTdjaE51Y0dQVWJ1ZGR5WVdOV1RGLwpaNGlWSFZuTi9UN2YvazZ4N0FqQzdpbDlIdnF6MlFpbTFubzVGOHpDcUlKdVJqZm9FRkRKR3lKMVBiMFY5NE5tCm5lbnZja1BtVFJ6Y05KSFJGTnZEY3dncWoxUkVUYjhVSmdEcjRhNUdRSVZiZGZ5Z1R1Z1k3Ujd3by9xbllVQ3gKa0NhUGx4amxxSitwVHg3WjNZcEVBdTdkU0Vwd2JsTjJ1SnBmR3EvbWJDSXVzbllWRWRuSENoMWNUWks4NWtHTQpUWHptcGVtREVadUQ0Qk5XQlQxbU0zY1lHa2lveTExcUZMcVhnUmZUTWozd1VoUW52NG1GYW1rWURoU1lUNkZtCnpTVjlSNHFYQWdNQkFBRUNnZ0VCQUxFbXR4dEloRzJ2U3IyL3ptQ3dmMkloQi9CZkltY2xzVmVuTDJSU3NjNU4KdzQvemdmaU1aOEVxT1lubVBtUUhpbHVMT0lwV1pnQmhPdHpkZzlKOVhEM2lwM0ozTjJsOTdsTmRVMUphcnNHegpiczdCcUY1ZVcwMWlmMTlmWURuMkcydWp3UWk2TkMrWm8zRDVTbW4ybFFRcVlxSnorWHp6K2NtcjljZElKOTV0CmdoNzBXelJCT2p4cnFvZmlwb25BejhhSHppUkhTTytDWE1nYnk2dGxieHBsS3NCT05KdkJqdGIyL2xjSWVvSVMKb0dnOFJpMWluSE1kMFdPRUduM2ZkQ3hiUWM5QVc4SFlrYnlXTTUyYm1YeDEwR1pKeUJKMG9SMDRidE1haU5kVgpzck1NenpuTXVOSXRXN2NBcnU2ejlXQWNxcEVYNTgzOU5HRWJjMjlJQUxFQ2dZRUEvdUZ4NGhCN1FjSm9HZTY5CkdoL1lmWHluVkU0aHk5OHd5VVVFY0VxYnpvaXlZSG5yeWd0WmxSMk4zSTAwSGhDZFJ5d1E1VjliU2UvYUZ0MkYKZ3NEOXp3ejlCaDlpalAyRURKM2VQWmF2VUlsaFVvSW1CL1ZaRE5RSjBFbzFhZjdCbk42WjJDYkhCYVlpcDRSVQoxVDhKa3NCWEJ6UjZCVi9BWXQ1TTkwcFNzWDhDZ1lFQStKdVcrdkpTRnp1VUl3akxLbzNUc0NRMm5YVzFUNFRzCjNwdDhTS3pMYkNpMUFpbnp4Z053Y1Uxayt1dWNvMktMZHFDaVd5ak1Gck5QNHhCT2RNV3NNSnJ2QXY5ZEZmZVkKKytLYmxmQ3pjWnVNMWxlbzBVbmRyYVlyREcwa0U4d0lNN0MxNjZUMjBEbFoyUGtIVU5qS2RwSDZxOGl6alQrZAowZlZzZXV2ZkF1a0NnWUVBdXI5UUE4VHpxbURZaVhlazBrbFhBOHFiaDJlZjE1SjJXbUhaT0xWUnAyZjgyamM2CmpkVDNGQXlOYm5WL0pEQWtMSXVhN1pTS2ZJZmlrVEpKcWwzaEdSMTVIazFNbGVVQ0pZUmQyMTVXb1htbTl4OG8KNGxmZm9VaVMwQ3d2S3JSZ0E2SU5zcFBtNnJxcFZYZmQrRWl4cVBhSVRWMGpzbUJQdzZFQlg0YnpROTBDZ1lFQQpvOUJpUEJsUVhsNnp6aUlOUFkwVzRBbjhzdVROQkFqaXpBeElhTnJ6YitHaTVEb2dsMm5NdmR2eG5pV0NvV1pkCjMxMFpubGZUbzJHa1VrcDhhQldZMEs1R3NBTDBvM1R6S1lhNFhxU3NtVCtXSGViRkpxTTFueWJQVnZEVHhQZTgKcjlMUkRPVTJmUjVOUmR0U0pzT3pKVTRyanVaQTZlSHhiRmY3azBPNVA0RUNnWUIwQkxtbmpRTGhFMXF5MHhVTwpLQnhBTjEzMTZZbmFITVNzYlltVzlCd2g3MkJDdHNqNWJhMURwYzJ1dXRoYXNleW9TOXp3bWFpaXRKVHl6bkNxCjl3ZlYrSklyUnVHQkQxVEJWWEljZTdhVDRKNGtjZTVGczQySHptTmtJdTEvRlpvQW9yWEVIYWhockNESFZsenYKdk1Ma05PazJBTTVJb1gzdVd5K1pSUzJ5a2c9PQotLS0tLUVORCBQUklWQVRFIEtFWS0tLS0tCg==
+kind: Secret
+metadata:
+  name: certificates
+  namespace: db002
+type: kubernetes.io/tls
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    service.alpha.kubernetes.io/tolerate-unready-endpoints: 'true'
+  labels:
+    name: db002-cms-headless
+    service_type: headless
+  name: db002-cms-headless
+  namespace: db002
+spec:
+  clusterIP: None
+  ports:
+  - name: monitoring-port
+    port: 30101
+    targetPort: 30101
+  - name: http
+    port: 80
+    targetPort: 80
+  - name: https
+    port: 443
+    targetPort: 443
+  - name: mysql
+    port: 3306
+    targetPort: 3306
+  - name: filebrowser
+    port: 8000
+    targetPort: 8000
+  - name: server-port
+    port: 60000
+    targetPort: 5001
+  publishNotReadyAddresses: true
+  selector:
+    name: db002-cms
+  type: ClusterIP
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: db002-cms
+  namespace: db002
+spec:
+  rules:
+  - host: db001-0.tripanels.com
+    http:
+      paths:
+      - backend:
+          serviceName: db002-cms
+          servicePort: 80
+        path: /
+      - backend:
+          serviceName: db002-cms
+          servicePort: 5001
+        path: /cp-agent-api
+      - backend:
+          serviceName: db002-cms
+          servicePort: 8000
+        path: /filebrowser
+  tls:
+  - hosts:
+    - db001-0.tripanels.com
+    secretName: certificates
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    prometheus.io/path: metrics
+    prometheus.io/scrape: 'true'
+  labels:
+    name: db002-cms-local
+    service_type: local
+  name: db002-cms-local
+  namespace: db002
+spec:
+  ports:
+  - name: monitoring-port
+    port: 30101
+    targetPort: 30101
+  selector:
+    name: db002-cms
+  type: ClusterIP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations: {}
+  labels:
+    name: db002-cms
+    service_type: public
+  name: db002-cms
+  namespace: db002
+spec:
+  ports:
+  - name: http
+    port: 80
+    targetPort: 80
+  - name: https
+    port: 443
+    targetPort: 443
+  - name: mysql
+    port: 3306
+    targetPort: 3306
+  - name: filebrowser
+    port: 8000
+    targetPort: 8000
+  - name: server-port
+    port: 60000
+    targetPort: 5001
+  selector:
+    name: db002-cms
+  type: ClusterIP
+---
+apiVersion: apps/v1beta2
+kind: StatefulSet
+metadata:
+  annotations:
+    prometheus.io/path: metrics
+    prometheus.io/scrape: 'true'
+  labels:
+    name: db002-cms
+    service_name: cms
+    stack_name: db002
+  name: db002-cms
+  namespace: db002
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: db002-cms
+  serviceName: db002-cms-headless
+  template:
+    metadata:
+      annotations: null
+      labels:
+        name: db002-cms
+        service_name: cms
+        stack_name: db002
+    spec:
+      affinity: {}
+      containers:
+      - env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: cloudclusters
+        - name: MYSQL_PASSWORD
+          value: wpresspwd
+        - name: MYSQL_USER
+          value: wpressuser
+        - name: MYSQL_DATABASE
+          value: wpressdata
+        - name: WP_USER
+          value: wordpress
+        - name: WP_PASSWORD
+          value: wordpress
+        - name: WP_TITLE
+          value: wordpress
+        - name: WP_EMAIL
+          value: email@domain.com
+        - name: FB_PASSWORD
+          value: admin1
+        - name: FB_USERNAME
+          value: admin1
+        - name: POD_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        image: registry.cloudclusters.net/cloudclusters/wordpress:0.0.40-test
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          exec:
+            command:
+            - sh
+            - -c
+            - mysqladmin ping -u root -p${MYSQL_ROOT_PASSWORD}
+          failureThreshold: 10
+          initialDelaySeconds: 80
+          periodSeconds: 5
+          successThreshold: 1
+          timeoutSeconds: 2
+        name: wordpress
+        ports:
+        - containerPort: 80
+          name: http
+          protocol: TCP
+        - containerPort: 443
+          name: https
+          protocol: TCP
+        - containerPort: 3306
+          name: mysql
+          protocol: TCP
+        - containerPort: 8000
+          name: filebrowser
+          protocol: TCP
+        readinessProbe:
+          exec:
+            command:
+            - sh
+            - -c
+            - mysqladmin ping -u root -p${MYSQL_ROOT_PASSWORD}
+          failureThreshold: 10
+          initialDelaySeconds: 40
+          periodSeconds: 5
+          successThreshold: 1
+          timeoutSeconds: 2
+        resources:
+          limits:
+            cpu: '2.0'
+            memory: 2G
+          requests:
+            cpu: '0.1'
+            memory: 100M
+        volumeMounts:
+        - mountPath: /cloudclusters
+          name: data
+      - env:
+        - name: ROOT_PASS
+          value: cloudclusters
+        - name: POD_LABEL_NAME
+          value: db002
+        - name: STACK_NAME
+          value: db002
+        - name: KUBECONFIG
+          value: /backup/admin.conf
+        image: registry.cloudclusters.net/cloudclusters/wordpressagentcitest:0.0.2
+        imagePullPolicy: IfNotPresent
+        name: wordpress-agent
+        ports:
+        - containerPort: 30101
+          name: monitoring-port
+          protocol: TCP
+        - containerPort: 5001
+          name: server-port
+          protocol: TCP
+        resources:
+          limits:
+            cpu: '1.0'
+            memory: 2G
+          requests:
+            cpu: '0.1'
+            memory: 100M
+        volumeMounts:
+        - mountPath: /cloudclusters
+          name: data
+        - mountPath: /backup
+          name: backup
+      initContainers: []
+      volumes:
+      - hostPath:
+          path: /clusterdata/backup/
+        name: backup
+      - name: certificates
+        secret:
+          secretName: certificates
+  volumeClaimTemplates:
+  - metadata:
+      annotations:
+        volume.beta.kubernetes.io/storage-class: rbd
+      name: data
+    spec:
+      accessModes:
+      - ReadWriteOnce
+      resources:
+        requests:
+          storage: 6Gi

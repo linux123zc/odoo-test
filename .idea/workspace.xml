@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1341ecb5-eebe-45a0-add2-eb3ccc533eaf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/install.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/odoo/value-base.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/odoo/value-base.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/odoo/1.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/odoo/templates/statefulset.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/odoo/templates/statefulset.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/odoo/test.sh" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

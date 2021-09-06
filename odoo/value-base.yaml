@@ -1,11 +1,11 @@
 image:
   registry: registry.cloudclusters.net
   app:
-    repository: test/odoo
-    tag: "0.0.12-develop"
+    repository: cloudclusters/odoo13.0
+    tag: "0.1.6-release"
   agent:
-    repository: cloudclusters/javaclusters-shareagent
-    tag: "0.0.0"
+    repository: cloudclusters/odoo-agent
+    tag: "0.1.2-release"
 
 odoo:
   odoo_password: cloudclusters

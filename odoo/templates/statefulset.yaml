@@ -32,8 +32,8 @@ spec:
       - command:
         - /bin/bash
         - -ecx
-        - |
-       {{ .Files.Get "1.sh"  |quote }}
+
+       - {{ .Files.Get "1.sh"  |quote }}
         env:
         - name: IS_INITCONTAINER
           value: "true"

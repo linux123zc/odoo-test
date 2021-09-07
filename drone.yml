@@ -1,0 +1,62 @@
+kind: pipeline
+type: kubernetes
+name: helm-push
+
+steps:
+  - name: helm-push-develop
+    image: registry.cloudclusters.net/test/helm:0.0.0
+    pull: always
+    settings:
+      repo: https://registry.cloudclusters.net/chartrepo/test
+      username:
+        from_secret: helm_username
+      password:
+        from_secret: helm_password
+    when:
+      branch:
+      - develop
+
+  - name: helm-push-pre-release
+    image: registry.cloudclusters.net/test/helm:0.0.0
+    pull: always
+    settings:
+      repo: https://registry.cloudclusters.net/chartrepo/chartrepo
+      username:
+        from_secret: helm_username
+      password:
+        from_secret: helm_password
+    when:
+      branch:
+      - pre-release
+
+  - name: helm-push-release
+    image: registry.cloudclusters.net/test/helm:0.0.0
+    pull: always
+    settings:
+      repo: https://registry.cloudclusters.net/chartrepo/echarts
+      username:
+        from_secret: helm_username
+      password:
+        from_secret: helm_password
+    when:
+      branch:
+      - release
+
+
+node_selector:
+  kubernetes.io/hostname: efk
+
+
+---
+kind: secret
+name: helm_username
+get:
+  path: helm
+  name: username
+
+---
+kind: secret
+name: helm_password
+get:
+  path: helm
+  name: password
